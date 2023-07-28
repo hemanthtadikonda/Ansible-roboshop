@@ -6,11 +6,11 @@
         ansible.builtin.yum:
           name: nginx
           state: latest
+
      -  name: Start Nginx
         ansible.builtin.systemd:
           name: nginx
           status: started
-          daemon_reload: true
           enabled: yes
 
 
