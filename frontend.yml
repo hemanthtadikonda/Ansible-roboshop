@@ -12,5 +12,6 @@
           name: nginx
           status: restarted
           enabled: yes
+          daemon_reload: yes
 
 
