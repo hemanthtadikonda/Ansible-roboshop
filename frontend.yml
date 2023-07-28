@@ -9,6 +9,8 @@
      -  name: Start Nginx
         ansible.builtin.systemd:
           name: nginx
+          daemon_reload: true
           status: started
+          enabled: yes
 
 
