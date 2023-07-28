@@ -10,7 +10,7 @@
      -  name: Start Nginx
         ansible.builtin.systemd:
           name: nginx
-          status: started
+          status: restarted
           enabled: yes
 
 
