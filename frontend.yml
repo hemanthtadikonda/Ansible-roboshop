@@ -10,5 +10,5 @@
         ansible.builtin.systemd:
           name: nginx
           status: started
-          enabled: yes
+
 
