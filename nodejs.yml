@@ -16,8 +16,8 @@
 
 - name: Download nodejs dependencies
   ansible.builtin.shell: npm install
-    args:
-      chdir: /app
+  args:
+    chdir: /app
 
 - name: Importing Schema setup
   ansible.builtin.import_tasks: mongo-schema.yml
