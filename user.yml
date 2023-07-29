@@ -2,7 +2,7 @@
    hosts: all
    become: true
    vars:
-     component: catalogue
+     component: user
      schema: true
    tasks:
      -  name: Node js setup
