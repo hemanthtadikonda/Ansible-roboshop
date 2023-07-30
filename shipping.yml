@@ -23,7 +23,7 @@
         state: installed
 
     - name: loading sql schema
-      ansible.builtin.shell: mysql -h mysql.ip.address -uroot -pRoboShop@1 < /app/schema/{{component}}.sql
+      ansible.builtin.shell: mysql -h mysql-dev.tadikonda.online -uroot -pRoboShop@1 < /app/schema/{{component}}.sql
 
     - name: calling systemd
       ansible.builtin.import_tasks: systemd-setup.yml
