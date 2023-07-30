@@ -13,7 +13,7 @@
       ansible.builtin.import_tasks: app-preq.yml
 
     - name: go commands
-      ansible.builtin.shell: go init dispatch
+      ansible.builtin.shell: init dispatch
 
     - name: go commands
       ansible.builtin.shell: go get
