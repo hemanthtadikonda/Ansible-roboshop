@@ -13,13 +13,11 @@
       ansible.builtin.import_tasks: app-preq.yml
 
     - name: go commands
-      ansible.builtin.shell: init dispatch
+      ansible.builtin.shell: go mod init dispatch ; go get ; go build
+      args:
+        chdir: /app
 
-    - name: go commands
-      ansible.builtin.shell: go get
 
-    - name: go commands
-      ansible.builtin.shell: go build
 
     - name: calling systemsd
       ansible.builtin.import_tasks: systemd-setup.yml
