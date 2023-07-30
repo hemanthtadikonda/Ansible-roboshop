@@ -4,9 +4,9 @@
   vars:
     component: shipping
   tasks:
-    - name: Install maveen
+    - name: Install maven
       ansible.builtin.yum:
-        name: maveen
+        name: maven
         state: installed
 
     - name: calling App-preq
