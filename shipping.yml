@@ -1,0 +1,29 @@
+- name: shipping installation
+  hosts: all
+  become: true
+  vars:
+    component: shipping
+  tasks:
+    - name: Install maveen
+      ansible.builtin.yum:
+        name: maveen
+        state: installed
+
+    - name: calling App-preq
+      ansible.builtin.import_tasks: app-preq.yml
+
+    - name: download maveen dependency package
+      ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
+      args:
+        chdir: /app
+
+    - name: install sql client
+      ansible.builtin.yum:
+        name: mysql
+        state: installed
+
+    - name: loading sql schema
+      ansible.builtin.shell: mysql -h mysql.ip.address -uroot -pRoboShop@1 < /app/schema/{{component}}.sql
+
+    - name: calling systemd
+      ansible.builtin.import_tasks: systemd-setup.yml
