@@ -4,7 +4,7 @@
     state: installed
 
 - name: calling App-preq
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: app-preq.yml
 
@@ -22,6 +22,6 @@
   ansible.builtin.shell: mysql -h mysql-dev.tadikonda.online -uroot -pRoboShop@1 < /app/schema/{{component}}.sql
 
 - name: calling systemd
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup.yml

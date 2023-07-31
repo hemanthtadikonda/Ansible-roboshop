@@ -4,7 +4,7 @@
     state: installed
 
 - name: calling app-preq
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: app-preq.yml
 
@@ -16,6 +16,6 @@
 
 
 - name: calling systemsd
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup.yml
